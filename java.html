@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="stly.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="w3-top">
+        <div class="w3-bar" id="myNavbar">
+            <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right"
+                href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+                <i class="fa fa-bars"></i>
+            </a>
+            <a href="mytemp.html" class="w3-bar-item w3-button">HOME</a>
+            <a href="java.html" class="w3-bar-item w3-button">JAVA</a>
+            <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
+                <i class="fa fa-search"></i>
+            </a>
+        </div>
+
+        <!-- Navbar on small screens -->
+        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+            <a href="java.html" class="w3-bar-item w3-button">JAVA</a>
+            <a href="#" class="w3-bar-item w3-button">SEARCH</a>
+        </div>
+    </div>
+
+    <body class="java">
+        <section id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 text-center">
+                        <div class="create">
+                            <h1 class="heading">Lab ที่ชอบ</h1>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="create">
+                            <h3>Fruits Input App</h3>
+                            <label for="fruitName">ชื่อผลไม้:</label>
+                            <input type="text" id="fruitName">
+                            <br>
+                            <div class="namef">
+                                <label for="fruitQuantity">จำนวนผลไม้:</label>
+                                <input type="number" id="fruitQuantity">
+                            </div>
+                            <br>
+                            <button onclick="addFruit()">เพิ่มผลไม้</button>
+                            <div class="create">
+                                <p>ผลไม้ที่ถูกสร้าง</p>
+                                <pre id="result"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            let fruits = [];
+
+            function addFruit() {
+                const fruitName = document.getElementById('fruitName').value;
+                const fruitQuantity = document.getElementById('fruitQuantity').value;
+
+                if (fruitName && fruitQuantity) {
+                    const fruit = {
+                        name: fruitName,
+                        quantity: fruitQuantity
+                    };
+                    fruits.push(fruit);
+                    updateResult();
+                }
+            }
+
+            function stopInput() {
+                console.log('Input stopped');
+            }
+
+            function updateResult() {
+                const resultElement = document.getElementById('result');
+                resultElement.textContent = JSON.stringify(fruits, null, 2);
+            }
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+        <script>
+            new WOW().init();
+        </script>
+        <div class="row">
+            <div class="create">
+                <h2>หาความยาวเส่นรอบวง</h2>
+                <input id="input" type="text" placeholder="รัศมี">
+                <button onclick="calculateAndDisplayCircumference()">คำนวน</button>
+                <h4>ความยาวเส้นรอบวงกลม:<span id="result1"></span></h4>
+            </div>
+        </div>
+        <script>
+            function calculateCircleCircumference(radius) {
+                return 2 * Math.PI * radius;
+            }
+            function calculateAndDisplayCircumference() {
+                let inputElement = document.getElementById('input');
+                let resultElement = document.getElementById('result');
+
+                let radius = parseFloat(inputElement.value);
+
+                if (!isNaN(radius)) {
+                    let circumference = calculateCircleCircumference(radius);
+                    resultElement.textContent = circumference.toFixed(2);
+                } else {
+                    resultElement.textContent = 'กรุณากรอกค่าที่ถูกต้อง';
+                }
+            }
+        </script>
+
+        <div class="row">
+            <div class="create">
+                <h2>หาความยาวเส่นทแยงมุมของสี่เหลี่ยงผืนผ้า</h2>
+                <input id="base" type="text" placeholder="ป้อนความยาวของฐาน">
+                <input id="height" type="text" placeholder="ป้อนความสูง">
+                <h4>ผลลัพธ์:<span id="show"></span></h4>
+                <button
+                    onclick="calculateHypotenuse(document.getElementById('base').value, document.getElementById('height').value)">คำนวน</button>
+            </div>
+        </div>
+        <script>
+            function calculateHypotenuse(base, height) {
+                let result = Math.sqrt(base ** 2 + height ** 2);
+                document.getElementById('show').innerHTML = result.toFixed(3);
+            }
+        </script>
+
+        <div class="row">
+            <div class="create">
+                <h2>คำนวนคะแนนเกรด</h2>
+                <h1 id="number"></h1>
+                <button onclick="number()">คำนวน</button>
+            </div>
+        </div>
+        <script>
+            function number() {
+                let number = prompt('What is your number');
+                let grade;
+
+                if (number > 80) {
+                    grade = 'A';
+                } else if (number < 80 && number >= 70) {
+                    grade = 'B';
+                } else if (number < 70 && number >= 60) {
+                    grade = 'C';
+                } else if (number < 60 && number >= 50) {
+                    grade = 'D';
+                } else {
+                    grade = 'F';
+                }
+                document.getElementById('number').innerHTML = `คะแนนเกรดของคุณ : ${grade}`;
+            }
+        </script>
+
+        <div class="row">
+            <div class="create">
+                <label for="temperatureInput">ป้อนอุณหภูมิ (°C):</label>
+                <input type="number" id="temperatureInput" placeholder="ป้อนอุณหภูมิ" step="0.1">
+                <button onclick="แปลงอุณหภูมิ()">แปลง</button>
+                <p id="temperature"></p>
+            </div>
+        </div>
+        <script>
+            function แปลงอุณหภูมิ() {
+                const temperatureInput = document.getElementById('temperatureInput').value;
+                if (!isNaN(temperatureInput)) {
+                    const temperatureFahrenheit = (temperatureInput * 9 / 5) + 32;
+                    document.getElementById('temperature').innerHTML = `อุณหภูมิในหน่วยฟาเรนไฮต์: ${temperatureFahrenheit.toFixed(2)} °F`;
+                } else {
+                    document.getElementById('temperature').innerHTML = 'กรุณาป้อนอุณหภูมิที่ถูกต้อง';
+                }
+            }
+        </script>
+    </body>
+</body>
+
+</html>

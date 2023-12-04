@@ -1,0 +1,57 @@
+body, html {
+    height: 100%;
+    color: #777;
+    line-height: 1.8;
+}
+.bgimg-1 {
+    min-height: 70%;
+    background-image: url('backimg.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.myname{
+    text-align: center;
+}
+.iam{
+    margin-left: 340px;
+    width: 300px
+
+}
+
+.bgimg-2{
+    min-height: 70%;
+    background-image: url('images.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.cont{
+    margin-left: 340px;
+}
+.portfolio{
+    color: black;
+}
+.java {
+	font-weight: bold;
+    height: 100%;
+    color: #777;
+    line-height: 1.8;
+    min-height: 70%;
+    background-image: url('backimg.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.row{
+    text-align: center;
+}
+.namef{
+    margin-right: 26px;
+}
+.create{
+    color: black;
+}
