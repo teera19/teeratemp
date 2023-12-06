@@ -30,14 +30,18 @@
                 <a href="#" class="w3-bar-item w3-button">SEARCH</a>
             </div>
         </div>
-        <h1>API</h1>
+        <br>
+        <h1 class="apii">API</h1>
         <form 
   method="POST" 
   action="https://script.google.com/macros/s/AKfycbzhmzhFCl0MUO0VjiwXuRGtL3nyq8SZubIbCyhua09TM1X5hDYP6ffWdpCMHz8V2udz/exec"
  id="myForm">
+        <div class="buttsend">
   <input name="Email" type="email" placeholder="Email" required>
   <input name="Name" type="text" placeholder="Name" required>
+  <input name="Topic" type="text" placeholder="Topic" required>
   <button type="submit">Send</button>
+</div>
 
 </form>
 
@@ -56,7 +60,7 @@
             })
             .then(response => response.json())
             .then(data => {
-              alert("Form submitted!\nEmail: " + formData.get('Email') + "\nName: " + formData.get('Name'));
+              alert("Form submitted!\nEmail: " + formData.get('Email') + "\nName: " + formData.get('Name') + "\nTopic: " + formData.get('Topic'));
               console.log("Google Sheets Response:", data);
             })
             .catch(error => console.error('Error submitting form:', error));

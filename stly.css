@@ -78,3 +78,15 @@ body, html {
     background-repeat: no-repeat;
     background-size: cover;
 }
+iframe{
+    height: 500px;
+    width: 500px;
+    margin-left: 348px;
+}
+.apii{
+    margin-left: 500px;
+}
+.buttsend{
+    margin-left: 250px;
+    padding: 50px;
+}
