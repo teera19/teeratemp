@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="stly.css">
+        <title>Document</title>
+    </head>
+<body>
+    <body>
+        <div class="w3-top">
+            <div class="w3-bar" id="myNavbar">
+                <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right"
+                    href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <a href="index.html" class="w3-bar-item w3-button">HOME</a>
+                <a href="api.html" class="w3-bar-item w3-button">API</a>
+                <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
+                    <i class="fa fa-search"></i>
+                </a>
+            </div>
+    
+            <!-- Navbar on small screens -->
+            <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+                <a href="api.html" class="w3-bar-item w3-button">API</a>
+                <a href="#" class="w3-bar-item w3-button">SEARCH</a>
+            </div>
+        </div>
+        <h1>API</h1>
+        <form 
+  method="POST" 
+  action="https://script.google.com/macros/s/AKfycbzhmzhFCl0MUO0VjiwXuRGtL3nyq8SZubIbCyhua09TM1X5hDYP6ffWdpCMHz8V2udz/exec"
+ id="myForm">
+  <input name="Email" type="email" placeholder="Email" required>
+  <input name="Name" type="text" placeholder="Name" required>
+  <button type="submit">Send</button>
+
+</form>
+    </body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          const myForm = document.getElementById("myForm");
+          myForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("succes");
+          });
+        });
+        </script>
+    
+</html>
