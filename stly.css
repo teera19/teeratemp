@@ -57,11 +57,11 @@ body, html {
 }
 .chart{
     font-weight: bold;
+    margin-top: 50px;
     height: 100%;
-    color: #777;
+    color: #000000;
     line-height: 1.8;
     min-height: 70%;
-    background-image: url('backimg.jpg');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -69,6 +69,8 @@ body, html {
 }
 .chart2{
     font-weight: bold;
+    margin-top: 50px;
+    margin-left: 340px;
     height: 100%;
     color: #000000;
     line-height: 1.8;
@@ -79,7 +81,7 @@ body, html {
     background-size: cover;
 }
 iframe{
-    height: 500px;
+    height: 300px;
     width: 500px;
     margin-left: 348px;
 }
@@ -88,5 +90,44 @@ iframe{
 }
 .buttsend{
     margin-left: 250px;
-    padding: 50px;
+    padding: 20px;
+}
+.ranim{
+    margin-left: 520px;
+    margin-top: 20px;
+}
+.ranim1{
+    margin-left: 500px;
+    margin-top: 60px;
+}
+.ranim2{
+    margin-left: 570px;
+    margin-top: 30px;
+}
+.ranim3{
+    margin-left: 380px;
+    margin-top: 60px;
+}
+.apibody{
+    font-weight: bold;
+    height: 100%;
+    background-image: url('backimg.jpg');
+    color: #000000;
+    line-height: 1.8;
+    min-height: 70%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.print{
+    margin-left: 400px;
+}
+.chartt{
+    background-image: url('backimg.jpg');
+    margin-top: 60px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

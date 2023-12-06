@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -12,7 +13,7 @@
     <title>Document</title>
 </head>
 
-<body class="chart2">
+<body>
     <div class="w3-top">
         <div class="w3-bar" id="myNavbar">
             <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right"
@@ -36,55 +37,82 @@
 
 </head>
 
-<body>
-    <canvas id="currencyChart" width="800" height="600"></canvas>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div class="chartt">
+    <canvas id="myChart" style="width:100%;max-width:500px"></canvas>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-    fetch('data.json')
-        .then(response => response.json())
-        .then(jsonData => {
-            const countries = jsonData.map(entry => entry.country);
-            const currencies = jsonData.map(entry => entry.currency_name);
+        var xyValues = [
+            { x: 50, y: 7 },
+            { x: 60, y: 8 },
+            { x: 70, y: 8 },
+            { x: 80, y: 9 }
 
-            // Generate random data for demonstration purposes
-            const dataValues = Array.from({ length: currencies.length }, () => Math.floor(Math.random() * 100));
+        ];
 
-            const ctx = document.getElementById('currencyChart').getContext('2d');
-            new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: countries,
-                    datasets: [{
-                        label: 'Currency Name',
-                        data: dataValues,  // Use the generated dataValues
-                        backgroundColor: 'skyblue'
+        new Chart("myChart", {
+            type: "scatter",
+            data: {
+                datasets: [{
+                    pointRadius: 4,
+                    pointBackgroundColor: "black",
+                    data: xyValues
+                }]
+            },
+            options: {
+                legend: { display: false },
+                scales: {
+                    xAxes: [{
+                        ticks: { min: 40, max: 160 },
+                    }],
+                    yAxes: [{
+                        ticks: { min: 6, max: 16 },
                     }]
-                },
-                options: {
-                    scales: {
-                        x: {
-                            title: {
-                                display: true,
-                                text: 'Country'
-                            }
-                        },
-                        y: {
-                            title: {
-                                display: true,
-                                text: 'Currency Name'
-                            }
-                        }
-                    },
-                    responsive: true,
-                    maintainAspectRatio: false
                 }
-            });
-        })
-        .catch(error => console.error('Error loading JSON:', error));
-});
+            }
+        });
     </script>
+    <div>
+        <canvas id="myjoe" style="width:100%;max-width:500px;"></canvas>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('myjoe');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['สุนัข', 'แมว', 'หนู', 'ปลา'],
+                color: 'black',
+                datasets: [{
+                    label: 'สัตว์เลี้ยงที่หลายคนชอบ',
+                    data: [5,5,5,5,],
+                    backgroundColor: ['black','black','black','black','black'],
+                    borderColor: ['black','black','black','black','black']
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                    }
+                },
+                maintainAspectRatio: false,
+                responsive: true,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: 'black'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</div>
 </body>
 
 </html>
