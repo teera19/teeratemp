@@ -55,3 +55,26 @@ body, html {
 .create{
     color: black;
 }
+.chart{
+    font-weight: bold;
+    height: 100%;
+    color: #777;
+    line-height: 1.8;
+    min-height: 70%;
+    background-image: url('backimg.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.chart2{
+    font-weight: bold;
+    height: 100%;
+    color: #000000;
+    line-height: 1.8;
+    min-height: 70%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
