@@ -40,15 +40,27 @@
   <button type="submit">Send</button>
 
 </form>
+
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQsAYskMUMTJPu3j2quDhqy0-zzXqd92GdbasBOfP1lxp5bmTipMt5IQFUqgfJemcChGjFtKaIvzdv/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
     </body>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
           const myForm = document.getElementById("myForm");
+        
           myForm.addEventListener("submit", function(event) {
             event.preventDefault();
-            alert("succes");
+            const formData = new FormData(myForm);
+            fetch(myForm.action, {
+              method: 'POST',
+              body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+              alert("Form submitted!\nEmail: " + formData.get('Email') + "\nName: " + formData.get('Name'));
+              console.log("Google Sheets Response:", data);
+            })
+            .catch(error => console.error('Error submitting form:', error));
           });
         });
         </script>
-    
 </html>
